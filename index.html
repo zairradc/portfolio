@@ -58,3 +58,34 @@
           el.style.left = (e.clientX - offsetX) + 'px';
           el.style.top = (e.clientY - offsetY) + 'px';
         }
+      });
+
+      document.addEventListener('mouseup', () => {
+        isDragging = false;
+        document.body.style.userSelect = 'auto';
+      });
+    }
+
+    // Make your specific window draggable
+    makeDraggable(document.getElementById('gameDesignWindow'));
+  </script>
+
+  <!-- Game Design Popup Window -->
+  <div class="window" id="gameDesignWindow" style="display: none; position: absolute; top: 20%; left: 30%; width: 300px;">
+    <div class="title-bar">
+      <div class="title-bar-text">Game Design</div>
+      <div class="title-bar-controls">
+        <button aria-label="Close" onclick="closeWindow('gameDesignWindow')"></button>
+      </div>
+    </div>
+    <div class="window-body">
+      <p>Welcome to my Game Design projects!</p>
+      <ul>
+        <li>Game 1</li>
+        <li>Game 2</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>
