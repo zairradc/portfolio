@@ -15,10 +15,10 @@
       <span class="icon-label">Game Design</span>
     </button>
 
-    <div class="icon" onclick="openApp('game')">🕹️ Game Design</div>
-    <div class="icon" onclick="openApp('web')">🌐 Web Design</div>
-    <div class="icon" onclick="openApp('branding')">🎨 Branding</div>
-    <div class="icon" onclick="openApp('projects')">📁 Projects</div>
+    <div class="icon" onclick="openWindow('gameDesignWindow')">🕹️ Game Design</div>
+    <div class="icon" onclick="openWindow('webDesignWindow')">🌐 Web Design</div>
+    <div class="icon" onclick="openWindow('brandingWindow')">🎨 Branding</div>
+    <div class="icon" onclick="openWindow('projectsWindow')">📁 Projects</div>
   </div>
 
   <nav class="taskbar">
@@ -30,11 +30,17 @@
 
   <script>
     function openWindow(id) {
-      document.getElementById(id).style.display = 'block';
+      const window = document.getElementById(id);
+      if (window) {
+        window.style.display = 'block'; // Ensure window appears
+      }
     }
 
     function closeWindow(id) {
-      document.getElementById(id).style.display = 'none';
+      const window = document.getElementById(id);
+      if (window) {
+        window.style.display = 'none'; // Ensure window is hidden
+      }
     }
   </script>
 
@@ -75,7 +81,7 @@
     <div class="title-bar">
       <div class="title-bar-text">Game Design</div>
       <div class="title-bar-controls">
-        <button aria-label="Close" onclick="closeWindow('gameDesignWindow')"></button>
+        <button aria-label="Close" onclick="closeWindow('gameDesignWindow')">X</button>
       </div>
     </div>
     <div class="window-body">
