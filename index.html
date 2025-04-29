@@ -9,12 +9,12 @@
 </head>
 <body>
   <div class="desktop">
-      <!-- Desktop Icon for Game Design -->
+    <!-- Desktop Icon for Game Design -->
     <button class="desktop-icon" onclick="openWindow('gameDesignWindow')">
       <img src="game-icon.png" alt="Game Design Icon" class="icon-image" style="width: 64px; height: 64px;"/>
       <span class="icon-label">Game Design</span>
     </button>
-    
+
     <div class="icon" onclick="openApp('game')">🕹️ Game Design</div>
     <div class="icon" onclick="openApp('web')">🌐 Web Design</div>
     <div class="icon" onclick="openApp('branding')">🎨 Branding</div>
@@ -37,69 +37,24 @@
       document.getElementById(id).style.display = 'none';
     }
   </script>
+
   <script>
     function makeDraggable(el) {
-    let isDragging = false;
-    let offsetX = 0;
-    let offsetY = 0;
+      let isDragging = false;
+      let offsetX = 0;
+      let offsetY = 0;
 
-    const titleBar = el.querySelector('.title-bar');
+      const titleBar = el.querySelector('.title-bar');
 
-    titleBar.addEventListener('mousedown', (e) => {
-      isDragging = true;
-      offsetX = e.clientX - el.offsetLeft;
-      offsetY = e.clientY - el.offsetTop;
-      document.body.style.userSelect = 'none'; // prevent text highlight while dragging
-    });
+      titleBar.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        offsetX = e.clientX - el.offsetLeft;
+        offsetY = e.clientY - el.offsetTop;
+        document.body.style.userSelect = 'none'; // prevent text highlight while dragging
+      });
 
-    document.addEventListener('mousemove', (e) => {
-      if (isDragging) {
-        el.style.left = (e.clientX - offsetX) + 'px';
-        el.style.top = (e.clientY - offsetY) + 'px';
-      }
-    });
-
-    document.addEventListener('mouseup', () => {
-      isDragging = false;
-      document.body.style.userSelect = 'auto';
-    });
-  }
-
-  // Make your specific window draggable
-  makeDraggable(document.getElementById('gameDesignWindow'));
-  </script>
-
-</body>
-
-  <!-- Game Design Popup Window -->
-<div class="window" id="gameDesignWindow" style="display: none; position: absolute; top: 20%; left: 30%; width: 300px;">
-  <div class="title-bar">
-    <div class="title-bar-text">Game Design</div>
-    <div class="title-bar-controls">
-      <button aria-label="Close" onclick="closeWindow('gameDesignWindow')"></button>
-    </div>
-  </div>
-  <div class="window-body">
-    <p>Welcome to my Game Design projects!</p>
-    <ul>
-      <li>Game 1</li>
-      <li>Game 2</li>
-    </ul>
-  </div>
-</div>
-
-
-  <!-- Game Design Window -->
-<div class="window" id="gameDesignWindow" style="display: none;">
-  <div class="title-bar">
-    <div class="title-bar-text">Game Design</div>
-    <div class="title-bar-controls">
-      <button onclick="closeWindow('gameDesignWindow')" aria-label="Close"></button>
-    </div>
-  </div>
-  <div class="window-body">
-    <p>This is your Game Design section content.</p>
-  </div>
-</div>
-
-</html>
+      document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+          el.style.left = (e.clientX - offsetX) + 'px';
+          el.style.top = (e.clientY - offsetY) + 'px';
+        }
