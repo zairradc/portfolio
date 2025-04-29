@@ -37,6 +37,37 @@
       document.getElementById(id).style.display = 'none';
     }
   </script>
+  <script>
+    function makeDraggable(el) {
+    let isDragging = false;
+    let offsetX = 0;
+    let offsetY = 0;
+
+    const titleBar = el.querySelector('.title-bar');
+
+    titleBar.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      offsetX = e.clientX - el.offsetLeft;
+      offsetY = e.clientY - el.offsetTop;
+      document.body.style.userSelect = 'none'; // prevent text highlight while dragging
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (isDragging) {
+        el.style.left = (e.clientX - offsetX) + 'px';
+        el.style.top = (e.clientY - offsetY) + 'px';
+      }
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      document.body.style.userSelect = 'auto';
+    });
+  }
+
+  // Make your specific window draggable
+  makeDraggable(document.getElementById('gameDesignWindow'));
+  </script>
 
 </body>
 
