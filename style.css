@@ -64,12 +64,13 @@ body {
 }
 
 .title-bar {
+  background-color: #d1d1d1; /* light macOS gray */
+  border: none;
+  box-shadow: none;
+  padding: 4px 8px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  background: linear-gradient(to bottom, #ececec, #dcdcdc);
-  padding: 0.5rem 1rem;
-  border-bottom: 1px solid #bbb;
+  align-items: center;
 }
 
 .window .title-bar .title-bar-controls button {
@@ -78,10 +79,18 @@ body {
   padding: 0px;
   cursor: pointer;
 }
+
 .title-bar-text {
-  font-weight: bold;
+  font-weight: 500;
   color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
+
+.title-bar-controls {
+  display: flex;
+  gap: 4px;
+}
+
 
 .window .title-bar .title-bar-controls button:hover {
   background: #bbb;
