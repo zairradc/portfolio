@@ -125,17 +125,17 @@ body {
 }
 
 .close-button {
-  all: unset; /* Resets most browser defaults */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  all: unset;
   width: 20px;
   height: 20px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .close-icon {
   width: 100%;
   height: 100%;
-  object-fit: contain;
 }
+
