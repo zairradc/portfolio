@@ -19,12 +19,8 @@ body {
   cursor: pointer;
   text-align: center;
   box-shadow: 2px 2px black;
-  transition: box-shadow 0.2s ease-in-out;
 }
 
-.icon:hover {
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
-}
 
 .desktop-icon {
   display: flex;
@@ -39,8 +35,6 @@ body {
 
 .desktop-icon:hover {
   background-color: rgba(255, 255, 255, 0.2);
-  transform: scale(1.05);
-  transition: transform 0.1s ease-in-out;
 }
 
 .icon-image {
@@ -58,31 +52,8 @@ body {
 .window {
   z-index: 10;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-  background: white;
-  border: 2px solid #c0c0c0;
-  border-radius: 8px;
-  padding: 20px;
 }
 
-.window .title-bar {
-  background: #808080;
-  padding: 8px;
-  border-radius: 4px 4px 0 0;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-}
-
-.window .title-bar .title-bar-controls button {
-  background: #d4d0c8;
-  border: none;
-  padding: 5px;
-  cursor: pointer;
-}
-
-.window .title-bar .title-bar-controls button:hover {
-  background: #bbb;
-}
 
 .taskbar {
   position: fixed;
@@ -101,7 +72,10 @@ body {
   background: #d4d0c8;
   border: 2px outset white;
   padding: 5px 10px;
-  cursor: pointer;
 }
 
-.start:hover {
+.time {
+  font-weight: bold;
+}
+
+
