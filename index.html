@@ -5,10 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/98.css/dist/98.min.css">
+  <!link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/98.css/dist/98.min.css">
 </head>
 <body>
   <div class="desktop">
+      <!-- Desktop Icon for Game Design -->
+    <div class="desktop-icon">
+      <img src="game-icon.png" alt="Game Design Icon" style="width: 64px; height: 64px;" />
+      <button onclick="openWindow('gameDesignWindow')">Game Design</button>
+    </div>
     <div class="icon" onclick="openApp('game')">🕹️ Game Design</div>
     <div class="icon" onclick="openApp('web')">🌐 Web Design</div>
     <div class="icon" onclick="openApp('branding')">🎨 Branding</div>
@@ -22,4 +27,17 @@
 
   <script src="script.js"></script>
 </body>
+  <!-- Game Design Window -->
+<div class="window" id="gameDesignWindow" style="display: none;">
+  <div class="title-bar">
+    <div class="title-bar-text">Game Design</div>
+    <div class="title-bar-controls">
+      <button onclick="closeWindow('gameDesignWindow')" aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body">
+    <p>This is your Game Design section content.</p>
+  </div>
+</div>
+
 </html>
