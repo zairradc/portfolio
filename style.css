@@ -114,25 +114,19 @@ body {
 .time {
   font-weight: bold;
 }
+
 .close-button {
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  width: auto;
-  height: auto;
-  cursor: pointer;
+  all: unset; /* Resets most browser defaults */
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: none;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 }
 
-
 .close-icon {
-  width: 16px;
-  height: 16px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  background: transparent;
-  box-shadow: none;
 }
