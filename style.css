@@ -125,6 +125,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: none;
 }
 
 
@@ -132,5 +133,6 @@ body {
   width: 16px;
   height: 16px;
   object-fit: contain;
-  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5)); /* optional for depth */
+  background: transparent;
+  box-shadow: none;
 }
