@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Welcome to My Portfolio</h1>
-    <p>This is where I showcase my work.</p>
+  <div class="desktop">
+    <div class="icon" onclick="openApp('game')">🕹️ Game Design</div>
+    <div class="icon" onclick="openApp('web')">🌐 Web Design</div>
+    <div class="icon" onclick="openApp('branding')">🎨 Branding</div>
+    <div class="icon" onclick="openApp('projects')">📁 Projects</div>
+  </div>
+
+  <nav class="taskbar">
+    <button class="start">Start</button>
+    <span class="time" id="time"></span>
+  </nav>
+
+  <script src="script.js"></script>
 </body>
 </html>
