@@ -50,12 +50,10 @@ body {
 }
 
 .window {
-  position: absolute;
-  top: 20%;
-  left: 30%;
-  width: 300px;
   z-index: 10;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
+
 
 .taskbar {
   position: fixed;
