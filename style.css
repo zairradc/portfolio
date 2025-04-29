@@ -49,6 +49,13 @@ body {
   text-align: center;
 }
 
+.window {
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  width: 300px;
+  z-index: 10;
+}
 
 .taskbar {
   position: fixed;
