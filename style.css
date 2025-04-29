@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -125,17 +126,17 @@ body {
 }
 
 .close-button {
-  all: unset;
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
+  all: unset; /* Resets most browser defaults */
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 }
 
 .close-icon {
   width: 100%;
   height: 100%;
+  object-fit: contain;
 }
-
