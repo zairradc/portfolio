@@ -5,35 +5,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <!link rel="stylesheet" href="https://unpkg.com/98.css">
 </head>
 <body>
-
   <div class="desktop">
-    <!-- Example Desktop Icon -->
-    <button class="desktop-icon" onclick="openWindow('gameWindow')">
-      <img src="game-icon.png" alt="Game Design" />
-      <span>Game Design</span>
+    <!-- Desktop Icon for Game Design -->
+    <button class="desktop-icon" onclick="openWindow('gameDesignWindow')">
+      <img src="game-icon.png" alt="Game Design Icon" class="icon-image" style="width: 64px; height: 64px;"/>
+      <span class="icon-label">Game Design</span>
     </button>
+    
+    <div class="icon" onclick="openWindow('webDesignWindow')">🌐 Web Design</div>
+    <div class="icon" onclick="openWindow('brandingWindow')">🎨 Branding</div>
+    <div class="icon" onclick="openWindow('projectsWindow')">📁 Projects</div>
   </div>
 
-  <!-- Example Window -->
-  <div class="window" id="gameWindow" style="display: none;">
-    <div class="title-bar">
-      <div class="window-controls">
-        <button class="close-button" onclick="closeWindow('gameWindow')"></button>
-      </div>
-      <div class="title-text">Game Design</div>
-    </div>
-    <div class="window-body">
-      <p>Here’s my game design work!</p>
-    </div>
-  </div>
-
-  <div class="taskbar">
+  <nav class="taskbar">
     <button class="start">Start</button>
-    <span class="time" id="time">12:00 PM</span>
-  </div>
+    <span class="time" id="time"></span>
+  </nav>
 
   <script src="script.js"></script>
+
+  <script>
+    function openWindow(id) {
+      const window = document.getElementById(id);
+      if (window) {
+        window.style.display = 'block'; // Ensure window appears
+        makeDraggable(window); // Apply draggable functionality to the opened window
+      }
+    }
+
+    function closeWindow(id) {
+      const window = document.getElementById(id);
+      if (window) {
+        window.style.display = 'none'; // Ensure window is hidden
+      }
+    }
+
+    function makeDraggable(el) {
+      let isDragging = false;
+      let offsetX = 0;
+      let offsetY = 0;
+
+      const titleBar = el.querySelector('.title-bar'); // This should be the element used for dragging
+
+      if (titleBar) {
+        titleBar.addEventListener('mousedown', (e) => {
+          isDragging = true;
+          offsetX = e.clientX - el.offsetLeft;
+          offsetY = e.clientY - el.offsetTop;
+          document.body.style.userSelect = 'none'; // Prevent text highlight while dragging
+        });
+
+        document.addEventListener('mousemove', (e) => {
+          if (isDragging) {
+            el.style.left = (e.clientX - offsetX) + 'px';
+            el.style.top = (e.clientY - offsetY) + 'px';
+          }
+        });
+
+        document.addEventListener('mouseup', () => {
+          isDragging = false;
+          document.body.style.userSelect = 'auto';
+        });
+      }
+    }
+  </script>
+
+  <!-- Game Design Popup Window -->
+  <div class="window" id="gameDesignWindow" style="display: none; position: absolute; top: 20%; left: 30%; width: 300px;">
+    <div class="title-bar">
+      <div class="title-bar-text">Game Design</div>
+      <div class="title-bar-controls">
+        <button class="close-button" onclick="closeWindow('gameDesignWindow')">
+          <img src="close-icon.png" alt="Close" class="close-icon" />
+        </button>
+      </div>
+    </div>
+    <div class="window-body">
+      <p>Welcome to my Game Design projects!</p>
+      <ul>
+        <li>Game 1</li>
+        <li>Game 2</li>
+      </ul>
+    </div>
+  </div>
+
 </body>
 </html>
