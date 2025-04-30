@@ -133,7 +133,9 @@ body {
   font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 500;
   color: #333;
+  margin-right: 10px; /* Add spacing from the right */
 }
+
 
 
 .close-button {
