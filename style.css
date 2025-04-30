@@ -153,3 +153,30 @@ body {
   height: 100%;
   object-fit: contain;
 }
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.game-card {
+  background: #f4f4f4;
+  border-radius: 8px;
+  padding: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.game-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.game-card:hover {
+  transform: scale(1.05);
+}
+
