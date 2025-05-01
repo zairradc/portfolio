@@ -207,7 +207,7 @@ body {
 
 #game1Window {
   width: 60vw;
-  height: 80vh;
+  /*height: 80vh;*/
   word-wrap: break-word;
   background: #533b6e url('games/tarot-trials/bg.PNG') no-repeat center center;
   background-size: cover;
@@ -228,7 +228,7 @@ body {
 
 #game2Window {
   width: 60vw;
-  height: 80vh;
+  /*height: 80vh;*/
   word-wrap: break-word;
   background: url('games/jacob-and-paul/bg.PNG') no-repeat center center;
   background-size: cover;
