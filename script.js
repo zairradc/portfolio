@@ -34,4 +34,72 @@ document.querySelectorAll('.title-bar').forEach(titleBar => {
   });
 });
 
+// Ensure Windows Remain Accessible on Window Resize
+window.addEventListener('resize', () => {
+  document.querySelectorAll('.window').forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+
+    let newLeft = rect.left;
+    let newTop = rect.top;
+
+    if (rect.right > viewportWidth) {
+      newLeft = Math.max(0, viewportWidth - el.offsetWidth);
+    }
+
+    if (rect.bottom > viewportHeight) {
+      newTop = Math.max(0, viewportHeight - el.offsetHeight);
+    }
+
+    el.style.left = `${newLeft}px`;
+    el.style.top = `${newTop}px`;
+  });
+});
+
+// Prevent Windows from Being Dragged Outside the Viewport
+function makeDraggable(el) {
+  let isDragging = false;
+  let offsetX = 0;
+  let offsetY = 0;
+
+  const titleBar = el.querySelector('.title-bar');
+
+  if (titleBar) {
+    titleBar.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      offsetX = e.clientX - el.offsetLeft;
+      offsetY = e.clientY - el.offsetTop;
+      document.body.style.userSelect = 'none';
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (isDragging) {
+        let newLeft = e.clientX - offsetX;
+        let newTop = e.clientY - offsetY;
+
+        // Get viewport dimensions
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+
+        // Get window dimensions
+        const elWidth = el.offsetWidth;
+        const elHeight = el.offsetHeight;
+
+        // Constrain within viewport
+        newLeft = Math.max(0, Math.min(newLeft, viewportWidth - elWidth));
+        newTop = Math.max(0, Math.min(newTop, viewportHeight - elHeight));
+
+        el.style.left = `${newLeft}px`;
+        el.style.top = `${newTop}px`;
+      }
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      document.body.style.userSelect = 'auto';
+    });
+  }
+}
+
 
