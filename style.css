@@ -216,6 +216,8 @@ body {
   background: #533b6e url('games/tarot-trials/bg.PNG') no-repeat center center;
   background-size: cover;
   text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* or any font you like */
+  color: #f0f0f0; /* light text color — change as needed */
 }
 
 #game1Window img {
