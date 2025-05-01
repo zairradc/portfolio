@@ -89,6 +89,7 @@ body {
 .window-body {
   padding: 1rem;
   box-sizing: border-box;
+  padding-top: 2.5rem; /* adjust based on title bar height */
 }
 
 .title-bar {
