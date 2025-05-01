@@ -22,6 +22,9 @@ body {
   flex-direction: column;
   padding: 2rem;
   max-width: 100%;
+   /* Prevents .desktop from overflowing body */
+  height: 100vh;
+  overflow: hidden;
 }
 
 .icon {
