@@ -5,12 +5,6 @@ html, body {
 
 /* Disable scrolling */
 
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #008080;
-}
-
 .desktop {
   display: flex;
   flex-direction: column;
@@ -186,17 +180,6 @@ body {
   flex-wrap: wrap;
 }
 
-/*
-.game-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem;
-  padding: 1rem;
-  justify-content: center;
-  box-sizing: border-box;
-}*/
-
-
 .game-card {
   background: #f4f4f4;
   border-radius: 8px;
@@ -218,8 +201,8 @@ body {
 
 #game1Window {
   width: 60vw;
+  height: 80vh;
   word-wrap: break-word;
-  /*overflow: auto;*/
   background: #533b6e url('games/tarot-trials/bg.PNG') no-repeat center center;
   background-size: cover;
   text-align: center;
@@ -239,6 +222,7 @@ body {
 
 #game2Window {
   width: 60vw;
+  height: 80vh;
   word-wrap: break-word;
   background: url('games/jacob-and-paul/bg.PNG') no-repeat center center;
   background-size: cover;
