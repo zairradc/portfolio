@@ -215,6 +215,7 @@ body {
   overflow: auto;
   background: #533b6e url('games/tarot-trials/bg.PNG') no-repeat center center;
   background-size: cover;
+  text-align: center;
 }
 
 #game1Window img {
