@@ -239,6 +239,8 @@ body {
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* or any font you like */
   /*color: #f0f0f0; /* light text color — change as needed */
+  max-height: 80vh; /* Limits height to 80% of viewport */
+  overflow-y: auto; /* Enables vertical scroll inside window */
 }
 
 #game2Window img {
