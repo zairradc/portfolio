@@ -68,6 +68,11 @@ body {
   text-align: center;
 }
 
+.window-body {
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
 .title-bar {
   background-color: #d1d1d1; /* light macOS gray */
   border: none;
