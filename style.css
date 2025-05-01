@@ -209,3 +209,8 @@ body {
   transform: scale(1.05);
 }
 
+#game1Window {
+  background: url('games/tarot-trials/bg.png') no-repeat center center;
+  background-size: cover;
+}
+
