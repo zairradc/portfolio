@@ -6,9 +6,9 @@ html, body {
 /* Disable scrolling */
 
 body {
-  overflow: hidden; /* disables page scroll */
   margin: 0;
-  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #008080;
 }
 
 .desktop {
@@ -77,14 +77,7 @@ body {
   text-align: center;
 }
 
-/*.window-body {
-  padding: 1rem;
-  box-sizing: border-box;
-} */
-
 .window-body {
-  overflow-y: auto;
-  flex: 1; /* fills remaining space after title bar */
   padding: 1rem;
   box-sizing: border-box;
 }
@@ -186,6 +179,17 @@ body {
   flex-wrap: wrap;
 }
 
+/*
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: center;
+  box-sizing: border-box;
+}*/
+
+
 .game-card {
   background: #f4f4f4;
   border-radius: 8px;
@@ -207,16 +211,13 @@ body {
 
 #game1Window {
   width: 60vw;
-  /*height: 80vh;*/
   word-wrap: break-word;
+  overflow: auto;
   background: #533b6e url('games/tarot-trials/bg.PNG') no-repeat center center;
   background-size: cover;
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* or any font you like */
-  overflow: hidden; /* prevent whole window from scrolling */
-  display: flex;
-  flex-direction: column;
-  /*color: #f0f0f0; /* light text color — change as needed */
+  color: #f0f0f0; /* light text color — change as needed */
 }
 
 #game1Window img {
@@ -228,16 +229,13 @@ body {
 
 #game2Window {
   width: 60vw;
-  /*height: 80vh;*/
   word-wrap: break-word;
+  overflow: auto;
   background: url('games/jacob-and-paul/bg.PNG') no-repeat center center;
   background-size: cover;
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* or any font you like */
-  overflow: hidden; /* prevent whole window from scrolling */
-  display: flex;
-  flex-direction: column;
-  /*color: #f0f0f0; /* light text color — change as needed */
+  color: #f0f0f0; /* light text color — change as needed */
 }
 
 #game2Window img {
