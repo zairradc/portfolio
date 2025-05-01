@@ -5,6 +5,12 @@ html, body {
 
 /* Disable scrolling */
 
+body {
+  overflow: hidden; /* disables page scroll */
+  margin: 0;
+  padding: 0;
+}
+
 .desktop {
   display: flex;
   flex-direction: column;
