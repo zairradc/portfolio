@@ -217,7 +217,7 @@ body {
   background-size: cover;
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* or any font you like */
-  color: #000000; /* light text color — change as needed */
+  /*color: #000000; /* light text color — change as needed */
 }
 
 #game1Window img {
