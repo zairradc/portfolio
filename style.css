@@ -73,38 +73,33 @@ body {
 }
 
 .window {
-  border-radius: 12px;
-  background: white;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 80vh; /* or whatever height you want */
+  width: 60vw;
   position: absolute;
-  z-index: 0;
+  overflow: hidden; /* prevent window from scrolling */
 }
+
+.title-bar {
+  position: relative; /* or sticky if needed */
+  top: 0;
+  z-index: 2;
+  height: 40px; /* fixed height */
+  flex-shrink: 0;
+}
+
+.window-body {
+  overflow-y: auto;
+  flex-grow: 1;
+  padding: 1rem;
+}
+
 
 .window-body p {
   text-align: center;
 }
 
-.window-body {
-  padding: 1rem;
-  box-sizing: border-box;
-  padding-top: 2.5rem; /* adjust based on title bar height */
-}
-
-.title-bar {
-  background-color: #d1d1d1; /* light macOS gray */
-  border: none;
-  box-shadow: none;
-  padding: 4px 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* Make title bar sticky*/
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
 
 .window .title-bar .title-bar-controls button {
   background: #d4d0c8;
