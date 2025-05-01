@@ -210,7 +210,7 @@ body {
 }
 
 #game1Window {
-  background: url('games/tarot-trials/bg.png') no-repeat center center;
+  background: url('games/tarot-trials/bg.PNG') no-repeat center center;
   background-size: cover;
 }
 
