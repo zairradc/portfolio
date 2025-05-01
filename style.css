@@ -228,10 +228,10 @@ body {
 }
 
 #game2Window {
+  background: url('games/jacob-and-paul/bg.PNG') no-repeat center center;
   width: 60vw;
   word-wrap: break-word;
   overflow: auto;
-  background: url('games/jacob-and-paul/bg.PNG') no-repeat center center;
   background-size: cover;
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* or any font you like */
