@@ -217,3 +217,9 @@ body {
   background-size: cover;
 }
 
+#game1Window img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* optional: centers image */
+}
