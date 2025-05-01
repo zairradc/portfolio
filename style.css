@@ -259,3 +259,10 @@ body {
   display: block;
   margin: 0 auto; /* optional: centers image */
 }
+
+.title-art {
+  max-width: 50%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
