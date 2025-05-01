@@ -233,13 +233,6 @@ body {
   /*color: #000000; /* light text color — change as needed */
 }
 
-#game1Window img {
-  max-width: 50vw;
-  height: auto;
-  display: block;
-  margin: 0 auto; /* optional: centers image */
-}
-
 #game2Window {
   background: url('games/jacob-and-paul/bg.PNG') no-repeat center center;
   width: 60vw;
@@ -251,13 +244,6 @@ body {
   /*color: #f0f0f0; /* light text color — change as needed */
   max-height: 80vh; /* Limits height to 80% of viewport */
   overflow-y: auto; /* Enables vertical scroll inside window */
-}
-
-#game2Window img {
-  max-width: 50vw;
-  height: auto;
-  display: block;
-  margin: 0 auto; /* optional: centers image */
 }
 
 .title-art {
