@@ -64,6 +64,10 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
+.window-body p {
+  text-align: center;
+}
+
 .title-bar {
   background-color: #d1d1d1; /* light macOS gray */
   border: none;
@@ -158,7 +162,9 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 1rem;
-  padding: 1rem 0;
+  padding: 1rem;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .game-card {
