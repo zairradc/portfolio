@@ -18,7 +18,7 @@ function openApp(type) {
 }
 
 // Initialize the top z-index value
-let topZIndex = 100;
+let topZIndex = 1001;
 
 // Function to bring a window to the front
 function bringToFront(windowEl) {
