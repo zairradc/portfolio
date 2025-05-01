@@ -9,7 +9,10 @@ body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: #008080;
+  overflow: hidden; /* disables page scroll */
+  padding: 0;
 }
+
 
 .desktop {
   display: flex;
