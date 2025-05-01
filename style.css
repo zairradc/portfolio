@@ -210,6 +210,9 @@ body {
 }
 
 #game1Window {
+  width: 60vw;
+  word-wrap: break-word;
+  overflow: auto;
   background: #533b6e url('games/tarot-trials/bg.PNG') no-repeat center center;
   background-size: cover;
 }
