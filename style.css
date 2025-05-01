@@ -173,17 +173,22 @@ body {
 }
 
 .game-grid {
-  display: flex
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/*
+.game-grid {
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 1rem;
   padding: 1rem;
   justify-content: center;
   box-sizing: border-box;
-  align-items: center;
-  flex-wrap: wrap;
-  }
+}*/
 
-}
 
 .game-card {
   background: #f4f4f4;
