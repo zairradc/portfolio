@@ -226,3 +226,21 @@ body {
   display: block;
   margin: 0 auto; /* optional: centers image */
 }
+
+#game2Window {
+  width: 60vw;
+  word-wrap: break-word;
+  overflow: auto;
+  background: url('games/jacob-and-paul/bg.PNG') no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* or any font you like */
+  color: #f0f0f0; /* light text color — change as needed */
+}
+
+#game2Window img {
+  max-width: 50vw;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* optional: centers image */
+}
