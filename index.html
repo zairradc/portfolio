@@ -95,7 +95,7 @@
             <span>Tarot Trials</span>
           </div>
           <div class="game-card" onclick="openWindow('game2Window')">
-            <img src="game2-thumb.png" alt="Jacob and Paul">
+            <img src="games/jacob-and-paul/jacob-and-paul.png" alt="Jacob and Paul">
             <span>Jacob and Paul</span>
           </div>
           <!--div class="game-card" onclick="window.open('https://seven-sardines.itch.io/tarot-trials', '_blank')">
@@ -127,7 +127,22 @@
   </div>
 
   <!-- Game 2 Window -->
-
+  <div class="window" id="game2Window" style="display: none; position: absolute; top: 100px; left: 100px;">
+    <div class="title-bar">
+      <div class="title-text">Jacob and Paul</div>
+      <div class="window-controls">
+        <!button class="close-button" onclick="closeWindow('game1Window')"></button>
+        <button class="close-button" onclick="closeWindow('game1Window')">
+          <img src="close-icon.png" alt="Close" class="close-icon" />
+        </button>
+      </div>
+    </div>
+    <div class="window-body">
+      <img src="games/jacob-and-paul/title-art.PNG" alt="Jacob and Paul">
+      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <iframe frameborder="0" src="https://itch.io/embed/3040059" width="552" height="167"><a href="https://seven-sardines.itch.io/jacob-and-paul">Jacob and Paul by Seven Sardines, Chickenisimamo, JayAiJoe, ishbenhuben</a></iframe>
+    </div>
+  </div>
 </body>
 
 </body>
