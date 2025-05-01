@@ -1,10 +1,18 @@
+// Time in task bar
 function updateTime() {
   const now = new Date();
-  document.getElementById('time').textContent = now.toLocaleTimeString();
+  const timeString = now.toLocaleTimeString([], {
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+  document.getElementById('time').textContent = timeString;
 }
-setInterval(updateTime, 1000);
+
+// Update time every minute
+setInterval(updateTime, 60000);
 updateTime();
 
+// Open app
 function openApp(type) {
   alert(`Open ${type} section... (you’ll replace this with real navigation)`);
 }
