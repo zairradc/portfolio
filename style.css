@@ -1,3 +1,34 @@
+@font-face {
+  font-family: 'Sofia';
+  src: url('games/jacob-and-paul/sofia-handwritten.woff2') format('woff2'),
+       url('games/jacob-and-paul/sofia-handwritten.woff') format('woff'),
+       url('games/jacob-and-paul/sofia-handwritten.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Carnevalee';
+  src: url('games/tarot-trials/Carnevalee.ttf') format('truetype'),
+       url('games/tarot-trials/Carnevalee.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Oxanium';
+  src: url('games/super-ai/Oxanium-Regular.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mass Effect';
+  src: url('games/super-ai/mass-effect.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
 html, body {
   overflow: hidden;
   /*overflow-x: hidden;
@@ -6,12 +37,12 @@ html, body {
   height: 100%;
 }
 
-/* Disable scrolling */
-
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #008080;
+  /* background: #008080; */
+  background: url('desktop-wallpaper.png') no-repeat center center;
+  background-size: cover;
   overflow: hidden; /* disables page scroll */
   padding: 0;
 }
@@ -22,7 +53,6 @@ body {
   flex-direction: column;
   padding: 2rem;
   max-width: 100%;
-   /* Prevents .desktop from overflowing body */
   height: 100vh;
   overflow: hidden;
 }
@@ -80,27 +110,32 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   position: absolute;
   z-index: 0;
+} 
+
+
+.window-body {
+  padding: 1rem;
+  box-sizing: border-box;
+  padding-top: 2.5rem;  
+}
+
+.window-body-remless {
+  box-sizing: border-box;
+  /* padding-top: 2.5rem;   */
 }
 
 .window-body p {
   text-align: center;
 }
 
-.window-body {
-  padding: 1rem;
-  box-sizing: border-box;
-  padding-top: 2.5rem; /* adjust based on title bar height */
-}
-
 .title-bar {
-  background-color: #d1d1d1; /* light macOS gray */
+  background-color: #d1d1d1; 
   border: none;
   box-shadow: none;
   padding: 4px 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* Make title bar sticky*/
   position: sticky;
   top: 0;
   z-index: 10;
@@ -134,7 +169,7 @@ body {
   bottom: 0;
   width: 100%;
   height: 48px;
-  background: rgba(255, 255, 255, 0.8); /* translucent white */
+  background: rgba(44, 44, 44, 0.8); /* translucent white */
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
@@ -148,7 +183,7 @@ body {
 .start {
   background: none;
   border: none;
-  color: #333;
+  color: #e0e0e0;
   font-weight: 500;
   font-size: 14px;
   cursor: pointer;
@@ -164,7 +199,7 @@ body {
 .time {
   font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 500;
-  color: #333;
+  color: #e0e0e0;
   margin-right: 50px; /* Add spacing from the right */
 }
 
@@ -190,19 +225,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-}
-
-/*
-.game-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 1rem;
-  padding: 1rem;
-  justify-content: center;
-  box-sizing: border-box;
-}*/
-
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
 
 .game-card {
   background: #f4f4f4;
@@ -211,6 +237,9 @@ body {
   text-align: center;
   cursor: pointer;
   transition: transform 0.2s ease;
+
+  flex: 1 1 200px; /* allows growing, but minimum width */
+  max-width: 180px;
 }
 
 .game-card img {
@@ -223,33 +252,145 @@ body {
   transform: scale(1.05);
 }
 
-#game1Window {
-  width: 60vw;
-  word-wrap: break-word;
-  overflow: auto;
-  background: #533b6e url('games/tarot-trials/bg.PNG') no-repeat center center;
-  background-size: cover;
-  text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* or any font you like */
-  /*color: #000000; /* light text color — change as needed */
-}
-
-#game2Window {
-  background: url('games/jacob-and-paul/bg.PNG') no-repeat center center;
-  width: 60vw;
-  word-wrap: break-word;
-  overflow: auto;
-  background-size: cover;
-  text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* or any font you like */
-  /*color: #f0f0f0; /* light text color — change as needed */
-  max-height: 80vh; /* Limits height to 80% of viewport */
-  overflow-y: auto; /* Enables vertical scroll inside window */
-}
-
 .title-art {
   max-width: 50%;
   height: auto;
   display: block;
   margin: 0 auto;
+}
+
+.iframe-wrapper {
+  max-width: 100%;
+  margin: 20px auto;
+}
+
+.iframe-wrapper iframe {
+  width: 100%;
+  height: 167px; /* Use the original height */
+  border: none;
+}
+
+
+#gameDesignWindow {
+  background: url('pixel-sky.PNG') no-repeat top center;
+  background-size: 100% auto;
+  background-color: #322C4E;
+}
+
+#gameDesignWindow .window-body {
+  padding-bottom: 2rem; /* Adjust as needed */
+}
+
+#game1Window {
+  /* background: #533b6e url('games/tarot-trials/bg.PNG') no-repeat center center; */
+  width: 60vw;
+  max-width: 800px;
+  word-wrap: break-word;
+  overflow: hidden; 
+  background-size: cover;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  max-height: 80vh; 
+  overflow-y: auto; 
+}
+
+.tt-section1 {
+  background: #5C464E;
+}
+
+.tt-text-wrapper {
+  padding: 1rem;
+}
+
+.tt-section2 {
+  background: url('games/tarot-trials/bg.PNG') repeat-y center top;
+  background-size: 100% auto;
+
+
+  font-family: 'Carnevalee', sans-serif;
+  font-weight: 500;
+  font-size: 36px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+/* Game 2 Window */
+#game2Window {
+  background: url('games/jacob-and-paul/bg.PNG') no-repeat center center;
+  width: 60vw;
+  max-width: 800px;
+  word-wrap: break-word;
+  overflow: hidden; 
+  background-size: cover;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  max-height: 80vh; 
+  overflow-y: auto; 
+}
+
+#game2Window .window-body {
+  font-family: 'Sofia', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.how-to-play {
+  border-radius: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center; 
+}
+
+
+.how-to-play img {
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  display: block;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.game-ss {
+  background-color: rgba(0, 0, 0, 0.6); /* black with 20% opacity */
+  padding: 1rem;
+}
+
+/* Game 3 Window */
+#game3Window {
+  /* background: #17293A;  */
+  background: url('games/super-ai/halftone.png') repeat-y center top;
+  background-size: 100% auto;
+  width: 60vw;
+  max-width: 800px;
+  word-wrap: break-word;
+  overflow: hidden; 
+  background-size: cover;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  max-height: 80vh; 
+  overflow-y: auto; 
+}
+
+#game3Window .window-body {
+  font-family: 'Oxanium', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.cards-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
