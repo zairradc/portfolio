@@ -12,29 +12,31 @@
 <body>
   <div class="desktop">
     <!-- Desktop Icon for Game Design -->
-    <button class="desktop-icon" onclick="openWindow('gameDesignWindow')">
-      <img src="game-icon.png" alt="Game Design Icon" class="icon-image" style="width: 64px; height: 64px;"/>
-      <span class="icon-label">Game Design</span>
+    <button class="desktop-icon" onclick="openWindow('uiDesignWindow')">
+      <img src="ui-ux.png" alt="UI/UX" class="icon-image" style="width: 64px; height: 64px;"/>
+      <span class="icon-label">UI/UX</span>
     </button>
-    
-    <button class="desktop-icon" onclick="openWindow('gameDesignWindow')">
-      <img src="game-icon.png" alt="Branding & Media Design" class="icon-image" style="width: 64px; height: 64px;"/>
+
+    <button class="desktop-icon" onclick="openWindow('graphicDesignWindow')">
+      <img src="graphic-design.png" alt="Branding & Media Design" class="icon-image" style="width: 64px; height: 64px;"/>
+      <span class="icon-label">Graphic Design & Illustration</span>
+    </button>
+
+    <button class="desktop-icon" onclick="openWindow('brandingDesignWindow')">
+      <img src="branding.png" alt="Branding & Media Design" class="icon-image" style="width: 64px; height: 64px;"/>
       <span class="icon-label">Branding & Media Design</span>
     </button>
 
     <button class="desktop-icon" onclick="openWindow('gameDesignWindow')">
-      <img src="game-icon.png" alt="Game Design Icon" class="icon-image" style="width: 64px; height: 64px;"/>
-      <span class="icon-label">UI/UX</span>
-    </button>
-    
-    <button class="desktop-icon" onclick="openWindow('gameDesignWindow')">
-      <img src="game-icon.png" alt="Branding & Media Design" class="icon-image" style="width: 64px; height: 64px;"/>
-      <span class="icon-label">Graphic Design & Illustration</span>
+      <img src="games.png" alt="Game Design Icon" class="icon-image" style="width: 64px; height: 64px;"/>
+      <span class="icon-label">Game Design</span>
     </button>
 
-    <!-- <div class="icon" onclick="openWindow('webDesignWindow')">🌐 Web Design</div>
-    <div class="icon" onclick="openWindow('brandingWindow')">🎨 Branding</div>
-    <div class="icon" onclick="openWindow('projectsWindow')">📁 Projects</div> -->
+    <button class="desktop-icon" onclick="openWindow('stickerWindow')">
+      <img src="contact.png" alt="Contact" class="icon-image" style="width: 64px; height: 64px;"/>
+      <span class="icon-label">Contact</span>
+    </button>
+
   </div>
 
   <nav class="taskbar">
@@ -86,7 +88,108 @@
         });
       }
     }
+  
   </script>
+
+
+  <script>
+    document.querySelectorAll('.sticker').forEach(sticker => {
+      let isDragging = false;
+      let offsetX, offsetY;
+
+      sticker.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        offsetX = e.clientX - sticker.offsetLeft;
+        offsetY = e.clientY - sticker.offsetTop;
+        sticker.style.zIndex = 1000;
+
+        const move = (e) => {
+          if (isDragging) {
+            sticker.style.left = `${e.clientX - offsetX}px`;
+            sticker.style.top = `${e.clientY - offsetY}px`;
+          }
+        };
+
+        const up = () => {
+          isDragging = false;
+          document.removeEventListener('mousemove', move);
+          document.removeEventListener('mouseup', up);
+        };
+
+        document.addEventListener('mousemove', move);
+        document.addEventListener('mouseup', up);
+      });
+    });
+  </script>
+
+  <!-- Sticker Popup Window -->
+  <div class="window" id="stickerWindow" style="display: none; position: absolute; top: 20%; left: 10%; width: 80vw; max-width: 600px;">
+    <div class="title-bar">
+      <div class="title-bar-text">UI/UX</div>
+      <div class="title-bar-controls">
+        <button class="close-button" onclick="closeWindow('stickerWindow')">
+          <img src="close-icon.png" alt="Close" class="close-icon" />
+        </button>
+      </div>
+    </div>
+    <div class="window-body sticker-area">
+      <img src="branding.png" class="sticker" />
+      <img src="games.png" class="sticker" />
+      <img src="graphic-design.png" class="sticker" />
+    </div>
+  </div>
+
+  <!-- UIUX Design Popup Window -->
+  <div class="window" id="uiDesignWindow" style="display: none; position: absolute; top: 20%; left: 10%; width: 80vw; max-width: 600px;">
+    <div class="title-bar">
+      <div class="title-bar-text">UI/UX</div>
+      <div class="title-bar-controls">
+        <button class="close-button" onclick="closeWindow('uiDesignWindow')">
+          <img src="close-icon.png" alt="Close" class="close-icon" />
+        </button>
+      </div>
+    </div>
+    <div class="window-body">
+      <img src="ui-ux-compiled.png" style="width: 100%; display: block; margin: 0; padding: 0;" />
+    </div>
+  </div>
+
+  <!-- Graphic Design Popup Window -->
+  <div class="window" id="graphicDesignWindow" style="display: none; position: absolute; top: 20%; left: 10%; width: 80vw; max-width: 600px;">
+    <div class="title-bar">
+      <div class="title-bar-text">Graphic Design & Illustration</div>
+      <div class="title-bar-controls">
+        <button class="close-button" onclick="closeWindow('graphicDesignWindow')">
+          <img src="close-icon.png" alt="Close" class="close-icon" />
+        </button>
+      </div>
+    </div>
+    <div class="window-body">
+      <div class="illustration-grid">
+        <img src="illustrations/davis.png" alt="Illustration 1" />
+        <img src="illustrations/kyrie.png" alt="Illustration 2" />
+        <img src="illustrations/jennie.png" alt="Illustration 3" />
+        <img src="illustrations/taylor.png" alt="Illustration 3" />
+        <!-- Add more images -->
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Branding Popup Window -->
+  <div class="window" id="brandingDesignWindow" style="display: none; position: absolute; top: 20%; left: 10%; width: 80vw; max-width: 600px;">
+    <div class="title-bar">
+      <div class="title-bar-text">Branding and Media Design</div>
+      <div class="title-bar-controls">
+        <button class="close-button" onclick="closeWindow('brandingDesignWindow')">
+          <img src="close-icon.png" alt="Close" class="close-icon" />
+        </button>
+      </div>
+    </div>
+    <div class="window-body">
+      <img src="branding-compiled.png" style="width: 100%; display: block; margin: 0; padding: 0;" />
+    </div>
+  </div>
 
   <!-- Game Design Popup Window -->
   <div class="window" id="gameDesignWindow" style="display: none; position: absolute; top: 20%; left: 10%; width: 80vw; max-width: 600px;">
@@ -99,9 +202,9 @@
       </div>
     </div>
     <div class="window-body">
-      <p style="font-size: 24px; text-shadow: 0 0 8px #000000; color: #ffffff"> Welcome to my Game Design projects!</p>
-      
-      <div class="game-grid">
+      <div class="centered-content">
+        <p style="font-size: 24px; text-shadow: 0 0 8px #000000; color: #ffffff"> Welcome to my Game Design projects!</p>
+        <div class="game-grid">
         <div class="game-card" onclick="openWindow('game1Window')">
           <img src="games/tarot-trials/tarot-trials.png" alt="Tarot Trials">
           <span>Tarot Trials</span>
@@ -118,11 +221,12 @@
           <img src="games/jacob-and-paul/jacob-and-paul.PNG" alt="Jacob and Paul">
           <span>Jacob and Paul</span>
         </div>
+        </div>
       </div>
     </div>
   </div>
   
-  <!-- Game 1 Window -->
+  <!-- Game 1 Window - Tarot Trials -->
   <div class="window" id="game1Window" style="display: none; position: absolute; top: 100px; left: 100px;">
     <div class="title-bar">
       <div class="title-bar-text">Tarot Trials</div>
@@ -133,22 +237,16 @@
       </div>
     </div>
 
-    <div class="window-body-remless">
-      <div class="tt-section1"> 
-        <img src="games/tarot-trials/art-w-title.png" alt="Tarot Trials" style="width: 100%;">
-        <img src="games/tarot-trials/title-art.PNG" alt="Tarot Trials" class="title-art">
-        <div class="tt-text-wrapper">
-          <img src="games/tarot-trials/enemies.png" style="width: 50%;">
-          <p style="color: #f0f0f0;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <div class="iframe-wrapper">
-            <iframe frameborder="0" src="https://itch.io/embed/3294514" width="552" height="167"><a href="https://seven-sardines.itch.io/tarot-trials">Tarot Trials by Seven Sardines, Zairra Mille, ishbenhuben, Danae, JayAiJoe</a></iframe>
-          </div>
-        </div>
+    <div class="window-body" style="background-color:#5C464E;">
+      <img src="games/tarot-trials/art-w-title.png" alt="Tarot Trials" style="width: 100%;">
+      <img src="games/tarot-trials/title-art.PNG" alt="Tarot Trials" class="title-art">
+      <img src="games/tarot-trials/enemies.png" style="width: 50%;">
+      <p style="color: #f0f0f0; padding:3rem;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div class="iframe-wrapper" style="padding-right:5rem; padding-left:5rem">
+        <iframe frameborder="0" src="https://itch.io/embed/3294514" width="552" height="167"><a href="https://seven-sardines.itch.io/tarot-trials">Tarot Trials by Seven Sardines, Zairra Mille, ishbenhuben, Danae, JayAiJoe</a></iframe>
       </div>
-    </div>
-    <div class="tt-section2">
-      <div class="window-body">
-        <p style="color: #f0f0f0;"> ATTACK CARDS </p>
+      <div class="tt-section" style="background: url('games/tarot-trials/bg.PNG') repeat-y center top; background-size: 100% auto; padding-bottom: 2rem;">
+        <p style="color: #f0f0f0; padding-top:2rem;"> ATTACK CARDS </p>
         <img src="games/tarot-trials/cards.png" style="width: 80%;">
 
         <p style="color: #f0f0f0;"> GAME SCREEN SHOTS </p>
@@ -159,7 +257,7 @@
     </div>
   </div>
 
-  <!-- Game 2 Window -->
+  <!-- Game 2 Window - Jacob and Paul-->
   <div class="window" id="game2Window" style="display: none; position: absolute; top: 100px; left: 100px;">
     <div class="title-bar">
       <div class="title-bar-text">Jacob and Paul</div>
@@ -171,18 +269,18 @@
     </div>
 
     <div class="window-body">
-      <img src="games/jacob-and-paul/title-art-edited.png" alt="Jacob and Paul" class="title-art">
-      <p> Led the creative development, designing all visual assets, including characters, environments, and UI. Contributed to game play mechanics and level design, enhancing player immersion and experience.</p>
+      <img src="games/jacob-and-paul/title-art-edited.png" alt="Jacob and Paul" class="title-art"  style="padding: 1rem;">
+      <p  style="padding: 1rem;"> Led the creative development, designing all visual assets, including characters, environments, and UI. Contributed to game play mechanics and level design, enhancing player immersion and experience.</p>
       
       <div class="how-to-play"> 
         <img src="games/jacob-and-paul/how-to-play-title.png" style="width: 40%;">
-        <p> Use your mouse to move our crow friend, Paul, to defend our scare crow, Jacob, from enemies. Use WASD to move Jacob around.</p>
+        <p style="padding: 1rem;"> Use your mouse to move our crow friend, Paul, to defend our scare crow, Jacob, from enemies. Use WASD to move Jacob around.</p>
         <img src="games/jacob-and-paul/controls.png">
         <img src="games/jacob-and-paul/enemies-title.png" style="width: 40%;">
         <img src="games/jacob-and-paul/enemies.png" style="width: 80%;">
       </div>
       
-      <div class="iframe-wrapper">
+      <div class="iframe-wrapper" style="padding: 1rem;">
         <iframe 
           src="https://itch.io/embed/3040059" 
           allowfullscreen 
@@ -194,9 +292,9 @@
 
       <div class="game-ss"> 
         <img src="games/jacob-and-paul/game-ss-title.png" style="width: 40%;">
-        <img src="games/jacob-and-paul/img1.png" style="width: 80%;">
-        <img src="games/jacob-and-paul/img2.png" style="width: 80%;">
-        <img src="games/jacob-and-paul/img3.png" style="width: 80%;">
+        <img src="games/jacob-and-paul/img1.png" style="width: 100%;">
+        <img src="games/jacob-and-paul/img2.png" style="width: 100%;">
+        <img src="games/jacob-and-paul/img3.png" style="width: 100%;">
         <img src="games/jacob-and-paul/carrot.png" style="width: 30%;">
       </div>
 
@@ -204,7 +302,7 @@
     </div>
   </div>
 
-  <!-- Game 3 Window -->
+  <!-- Game 3 Window - Super AI -->
   <div class="window" id="game3Window" style="display: none; position: absolute; top: 100px; left: 100px;">
     <div class="title-bar">
       <div class="title-bar-text">Super AI</div>
@@ -215,7 +313,7 @@
       </div>
     </div>
 
-    <div class="window-body">
+    <div class="window-body" style="padding:2rem;">
       <img src="games/super-ai/droid-gif.gif" style="width: 20%;">
       <img src="games/super-ai/title-art.png" alt="Ctrl+Cmd" style="width: 100%;">
         
@@ -230,21 +328,52 @@
       <div class="iframe-wrapper">
         <iframe height="167" frameborder="0" src="https://itch.io/embed/2916599" width="552"><a href="https://seven-sardines.itch.io/ctrlcmd">CTRL+CMD by Seven Sardines, JayAiJoe, Misphantom, ishbenhuben, Danae</a></iframe>
       </div>
-    </div>
-    <p style="font-family: 'Mass Effect', sans-serif; font-size: 24px; text-shadow: 0 0 4px #0063FF; color: #00FBFF"> GAME ILLUSTRATIONS</p>
-    <div class="cards-grid">
-        <img src="games/super-ai/resized-cards/med.png">
-        <img src="games/super-ai/resized-cards/movie.png">
-        <img src="games/super-ai/resized-cards/chat.png">
-        <img src="games/super-ai/resized-cards/pandemic.png">
-        <img src="games/super-ai/resized-cards/conference.png">
-        <img src="games/super-ai/resized-cards/super-ai.png">
-        <img src="games/super-ai/resized-cards/smart-house.png">
-        <img src="games/super-ai/resized-cards/angel.png">
-        <img src="games/super-ai/resized-cards/money.png">
+    
+      <p style="font-family: 'Mass Effect', sans-serif; font-size: 24px; text-shadow: 0 0 4px #0063FF; color: #00FBFF"> GAME ILLUSTRATIONS</p>
+      <div class="cards-grid">
+          <img src="games/super-ai/resized-cards/med.png">
+          <img src="games/super-ai/resized-cards/movie.png">
+          <img src="games/super-ai/resized-cards/chat.png">
+          <img src="games/super-ai/resized-cards/pandemic.png">
+          <img src="games/super-ai/resized-cards/conference.png">
+          <img src="games/super-ai/resized-cards/super-ai.png">
+          <img src="games/super-ai/resized-cards/smart-house.png">
+          <img src="games/super-ai/resized-cards/angel.png">
+          <img src="games/super-ai/resized-cards/money.png">
+      </div>
     </div>
   </div>
 
+  <!-- Game 4 Window - Balete Brews -->
+  <div class="window" id="game4Window" style="display: none; position: absolute; top: 100px; left: 100px;">
+    <div class="title-bar">
+      <div class="title-bar-text">Balete Brews - In Progress</div>
+      <div class="title-bar-controls">
+        <button class="close-button" onclick="closeWindow('game4Window')">
+          <img src="close-icon.png" alt="Close" class="close-icon" />
+        </button>
+      </div>
+    </div>
+
+    <div class="window-body" style="background-color:#5C464E;">
+      <img src="games/balete-brews/cover.png" style="width: 100%;">
+      <!-- <img src="games/tarot-trials/title-art.PNG" alt="Tarot Trials" class="title-art">
+      <img src="games/tarot-trials/enemies.png" style="width: 50%;"> -->
+      <p style="color: #f0f0f0; padding:2rem;"> Coming Soon!</p>
+      <!-- <div class="iframe-wrapper" style="padding-right:5rem; padding-left:5rem">
+        <iframe frameborder="0" src="https://itch.io/embed/3294514" width="552" height="167"><a href="https://seven-sardines.itch.io/tarot-trials">Tarot Trials by Seven Sardines, Zairra Mille, ishbenhuben, Danae, JayAiJoe</a></iframe>
+      </div>
+      <div class="tt-section" style="background: url('games/tarot-trials/bg.PNG') repeat-y center top; background-size: 100% auto; padding-bottom: 2rem;">
+        <p style="color: #f0f0f0; padding-top:2rem;"> ATTACK CARDS </p>
+        <img src="games/tarot-trials/cards.png" style="width: 80%;">
+
+        <p style="color: #f0f0f0;"> GAME SCREEN SHOTS </p>
+        <img src="games/tarot-trials/img1.png" style="width: 80%;">
+        <img src="games/tarot-trials/img2.png" style="width: 80%;">
+        <img src="games/tarot-trials/img3.png" style="width: 80%;">
+      </div> -->
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>

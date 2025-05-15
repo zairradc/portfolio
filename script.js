@@ -26,11 +26,38 @@ function bringToFront(windowEl) {
   windowEl.style.zIndex = topZIndex;
 }
 
+function openWindow(id) {
+  const window = document.getElementById(id);
+  if (window) {
+    window.style.display = 'block'; // Ensure the window appears
+    topZIndex += 1; // Increment z-index for the next window
+    window.style.zIndex = topZIndex; // Set the z-index to bring it to the front
+    makeDraggable(window); // Apply draggable functionality to the opened window
+  }
+}
+
+function closeWindow(id) {
+  const window = document.getElementById(id);
+  if (window) {
+    window.style.display = 'none'; // Ensure window is hidden
+  }
+}
+
 // Attach event listeners to all title bars
 document.querySelectorAll('.title-bar').forEach(titleBar => {
   titleBar.addEventListener('mousedown', () => {
     const windowEl = titleBar.closest('.window');
     bringToFront(windowEl);
+  });
+});
+
+// Attach event listeners to the entire window (not just the title bar)
+document.querySelectorAll('.window').forEach(windowEl => {
+  windowEl.addEventListener('mousedown', (e) => {
+    // Ensure we don't trigger this if the click is on the title bar
+    if (!e.target.closest('.title-bar')) {
+      bringToFront(windowEl);
+    }
   });
 });
 
